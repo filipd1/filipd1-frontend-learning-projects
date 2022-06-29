@@ -1,0 +1,209 @@
+:root {
+    --green: rgb(47, 190, 78);
+}
+
+body {
+    background: rgb(228, 226, 226);
+    margin: 0;
+    font-family: 'Poppins';
+}
+
+.logo {
+    text-decoration: none;
+    font-size: 2em;
+    color: black;
+
+    span {
+        color: var(--green);
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    
+    li {
+        padding: 0 1em;
+        
+        a {
+            color: black;
+
+            &:hover {
+                font-weight: bold;
+                color: var(--green);
+            }
+        }
+    }
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    background: white;
+    padding: 1em;
+}
+
+.mobile-nav,
+.mobile-menu-exit {
+    display: none;
+}
+
+.dropdown {
+    position: relative;
+
+    &:hover > .dropdown-menu {
+        display: block;
+    }
+}
+
+.dropdown-menu {
+    position: absolute;
+    display: block;
+    left: 0;
+    top: calc(100% + .25em);
+    padding: 1.5em;
+    border-radius: .25em;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
+    background: white;
+    display: none;
+
+    li {
+        padding: .5em;
+    }
+}
+
+.title {
+    text-align: center;
+    margin-top: 4em;
+    font-size: 2em;
+}
+
+.recipe-wrapper {
+    margin: 1em 12em;
+}
+
+.small {
+    width: 40%;
+}
+
+.recipe {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 3em;
+    padding: 1em;
+
+    img {
+        width: 25em;
+    }
+
+    .text-wrapper {
+        margin-top: 4em;
+        width: 60%;
+
+        h3 {
+            font-size: 1.4em;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+
+        .see-more {
+            font-style: italic;
+            color: gray;
+        
+            &:hover {
+                text-decoration: underline;
+                color: black;
+            }
+        }
+    }
+}
+
+.recipe.right {
+    grid-template-areas: 
+        "left right";
+
+    img {
+        grid-area: right;
+    }
+
+    .text-wrapper {
+        text-align: right;
+        justify-self: right;
+    }
+}
+
+.tips {
+    margin-top: 8em;
+    background: var(--green);
+}
+
+.title-tips {
+    text-align: center;
+    margin-top: 2em;
+    padding: 1em;
+    font-size: 2em;
+}
+
+.tips-wrapper {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+
+    .tip {
+        padding: 1em;
+        overflow: hidden;
+
+        a {
+            p {
+                color: black;
+                font-size: 1.2em;
+
+                &:hover {
+                    font-weight: bold;
+                }
+            }
+
+            img {
+                width: 100%;
+                height: 32em;
+    
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    .mobile-nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 1em;
+    }
+    
+    .mobile-menu {
+        margin: 1em;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+    }
+    
+    .mobile-logo {
+        margin: .2em;
+    }
+
+    nav {
+        display: none;
+    }
+}

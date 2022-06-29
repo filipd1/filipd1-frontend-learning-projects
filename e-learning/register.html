@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <nav class="nav-shadow">
+        <a class="clr-black" href="index.html"><h1 class="logo">LIBR<span>I</span>A</h1></a>
+
+        <div class="mobile-icons">
+            <a href="login.html"><img class="profile-img" src="images/avatar.svg"/></a>
+            <img class="mobile-menu" src="images/menu.svg"/>
+        </div>
+
+        <ul class="desktop-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#" class="white">Support</a></li>
+        </ul>
+
+        <div class="flex hidden">
+            <a href="login.html"><input type="submit" class="cta login" value="Login"></a>
+            <a href="register.html"><input type="submit" class="cta register" value="Register"></a>
+        </div>
+    </nav>
+
+    <div class="form-wrapper register-wrapper">
+        <div class="inner-form-wrapper">
+            <h1 class="login-header">Signup</h1>
+            <form action="">
+                <label for="username">Username</label>
+                <input type="text" class="login-input register-input">
+                <label for="email">Username</label>
+                <input type="email" class="login-input register-input">
+                <label for="password">Password</label>
+                <input type="password" class="login-input register-input">
+                <label for="password2">Password</label>
+                <input type="password" class="login-input register-input">
+
+                <input type="submit" value="Signup" class="login-cta">
+            </form>
+            <div class="login-text">
+                <p>Already have an account? <a href="login.html">Sign in</a></p>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/gsap.min.js" integrity="sha512-kVlGhj2qFy+KBCFuvjBJTGUMxbdqJKs4yK2jh0e0VPhWUPiPC87bzm4THmaaIee3Oj7j6sDpTTgm2EPPiESqBg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

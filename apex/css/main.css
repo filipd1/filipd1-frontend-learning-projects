@@ -1,0 +1,294 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --clr-bg: rgb(240, 240, 232);
+    --clr-bg-secondary: rgb(224, 224, 224);
+    --clr-yellow: rgb(231, 201, 28);
+    --clr-pink: rgb(241, 135, 206);
+    --clr-orange: rgb(231, 133, 5);
+}
+
+body {
+    font-family: 'Poppins';
+    background: linear-gradient(to right, var(--clr-bg-secondary), var(--clr-bg));
+}
+
+img {
+    width: 100%;
+}
+
+.hero {
+    height: 100vh;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 3em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: .7em;
+    position: relative;
+}
+
+.logo {
+    font-size: 1.5rem;
+}
+
+.logo::before {
+    content: '';
+    position: absolute;
+    bottom: 32%;
+    left: 3%;
+    transform: rotate(-15deg);
+    width: 20px;
+    height: 20px;
+    background: var(--clr-yellow);
+    border: 1px solid #000;
+}
+
+.logo::after {
+    content: '';
+    position: absolute;
+    bottom: 39%;
+    left: 4.5%;
+    transform: rotate(-30deg);
+    width: 20px;
+    height: 20px;
+    background: var(--clr-orange);
+    border: 1px solid #000;
+}
+
+.logo-img {
+    width: 20px;
+    height: 20px;
+    background: #000;
+}
+
+.nav-list {
+    display: flex;
+    list-style-type: none;
+}
+
+.nav-list-item {
+    padding: 1em;
+}
+
+.nav-link {
+    color: #000;
+    text-decoration: none;
+    position: relative;
+}
+
+.dropdown-list {
+    display: none;
+    position: absolute;
+    top: 70%;
+    box-shadow: 0 0 2px #000;
+    background-color: var(--clr-bg);
+    z-index: 99;
+}
+
+.nav-list-item:hover .dropdown-list {
+    display: block;
+}
+
+.dropdown-arrow {
+    position: relative;
+}
+
+.dropdown-arrow::after {
+    content: '';
+    position: absolute;
+    bottom: 50%;
+    right: -17%;
+    transform: translateY(50%);
+    width: 0; 
+    height: 0; 
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #000;
+}
+
+.cta {
+    font-family: 'Poppins';
+    padding: .6em 1.2em;
+    background-color: var(--clr-bg);
+    font-weight: bold;
+    font-size: 1.05rem;
+    cursor: pointer;
+}
+
+.login {
+    border: none;
+}
+
+.register {
+    border: 1px solid #000;
+}
+
+.register:hover {
+    color: #fff;
+    background-color: #000;
+}
+
+.start {
+    color: #fff;
+    background-color: #000;
+    border: none;
+    padding: 1.2em 2em;
+}
+
+.start:hover {
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #000;
+}
+
+.container {
+    display: grid;
+    place-items: center;
+}
+
+.hero-text-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10em 5.5em;
+    gap: 4em;
+}
+
+.hero-header {
+    font-size: 4.1rem;
+}
+
+.text {
+    font-size: 1.2rem;
+    margin-bottom: 2em;
+}
+
+.hero-img-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.card-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2em;
+    font-size: 1rem;
+}
+
+.subhead {
+    font-weight: 500;
+    position: relative;
+    padding-left: 1em;
+}
+
+.subhead::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 12px;
+    height: 30px;
+}
+
+#sh1::before {
+    background: var(--clr-yellow);
+}
+
+#sh2::before {
+    background: var(--clr-pink);
+}
+
+#sh3::before {
+    background: var(--clr-orange);
+}
+
+.number {
+    opacity: .3;
+    font-size: 1.5rem;
+}
+
+.card {
+    padding: 2em;
+    position: relative;
+}
+
+.card-img {
+    aspect-ratio: 1/1;
+    width: 400px;
+}
+
+#img1 {
+    transform: rotate(-8deg);
+}
+
+#img2 {
+    transform: rotate(3deg);
+}
+
+#img3 {
+    transform: rotate(-2deg);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    width: 180px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, .1);
+    z-index: 99;
+}
+
+#card1::before {
+    top: 16%;
+    left: 25%;
+    transform: rotate(-8deg);
+}
+
+#card2::before {
+    bottom: 10%;
+    right: 0;
+    transform: rotate(-30deg);
+}
+
+#card2::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    bottom: 10%;
+    right: 0;
+    border: 4px dashed rgba(0, 0, 0, .1);
+    z-index: -1;
+}
+
+#card3::before {
+    top: 20%;
+    right: 0%;
+    transform: rotate(30deg);
+}
+
+
+@media screen and (min-width: 1600px) {
+    .hero-text-container {
+        margin: 12em 17.5em;
+    }
+}
+    

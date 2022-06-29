@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="header-image">
+        <h1>Polskie Góry</h1>
+    </div>
+
+    <header>
+        <nav>
+            <img class="mobile-menu-exit" src="images/exit.svg" alt="Exit mobile menu">
+
+            <ul>
+                <a href="#"><li>Góry</li></a>
+                <a href="#"><li>Blog</li></a>
+                <a href="#"><li>Polska</li></a>
+                <a href="#"><li>Świat</li></a>
+                <a href="#"><li>O nas</li></a>
+            </ul>
+                <div clas="search-d">
+                    <img src="images/search2.svg" alt="Mobile menu search">
+                    <input type="text" placeholder="Szukaj..">
+                </div>
+        </nav>
+        <div class="mobile-nav">
+            <img class="mobile-menu" src="images/menu.svg" alt="Mobile menu">
+            <div class="search">
+                <img class="search-icon" id="search-btn" src="images/search.svg" alt="Mobile menu search">
+                <input class="search-bar" id="search" type="text" placeholder="">
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="wrapper">
+            <ul class="mountain-list">
+                <li><a href="#"><img src="images/beskid-sadecki.jpg" alt=""><p class="centered">Beskid Sądecki</p></a></li>
+                <li><a href="#"><img src="images/beskid-slaski.jpg" alt=""><p class="centered">Beskid śląski</p></a></li>
+                <li><a href="#"><img src="images/bieszczady.jpg" alt=""><p class="centered">Bieszczady</p></a></li>
+                <li><a href="#"><img src="images/gorce.jpg" alt=""><p class="centered">Gorce</p></a></li>
+                <li><a href="#"><img src="images/karkonosze.jpg" alt=""><p class="centered invert">Karkonosze</p></a></li>
+                <li><a href="#"><img src="images/korona.jpg" alt=""><p class="centered">Korona Gór Polskich</p></a></li>
+                <li><a href="#"><img src="images/pieniny.jpg" alt=""><p class="centered">Pieniny</p></a></li>
+                <li><a href="#"><img src="images/tatry.jpg" alt=""><p class="centered">Tatry</p></a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="articles">
+
+        <h1>Polecane Artykuły</h1>
+
+        <div class="articles-wrapper">
+
+            <div class="article">
+                <img src="images/article1.jpg" alt="Zdjęcie gór">
+                <p class="title">Atrkacje turystyczne</p>
+                <p>Excepteur fugiat occaecat exercitation sit. Exercitation laborum velit irure sunt commodo voluptate officia. Cupidatat nulla anim labore consectetur sit.<a href="#"> Czytaj...</a></p>
+            </div>
+            <hr>
+
+            <div class="article">
+                <img src="images/article2.jpg" alt="Zdjęcie gór">
+                <p class="title">Zborze</p>
+                <p>Excepteur fugiat occaecat exercitation sit. Exercitation laborum velit irure sunt commodo voluptate officia. Cupidatat nulla anim labore consectetur sit.<a href="#"> Czytaj...</a></p>
+            </div>
+            <hr>
+
+            <div class="article">
+                <img src="images/article3.jpg" alt="Zdjęcie gór">
+                <p class="title">Roślinność kaukaska</p>
+                <p>Excepteur fugiat occaecat exercitation sit. Exercitation laborum velit irure sunt commodo voluptate officia. Cupidatat nulla anim labore consectetur sit.<a href="#"> Czytaj...</a></p>
+            </div>
+            <hr>
+
+        </div>
+
+        <a href="#" class="see-more"><h3>Zobacz więcej</h3></a>
+
+    </section>
+
+    <script>
+        const close = document.querySelector('.mobile-menu-exit')
+        const menu = document.querySelector('.mobile-menu')
+        const nav = document.querySelector('nav')
+
+        const searchBtn = document.getElementById('search-btn')
+        const search = document.getElementById('search')
+
+        const header = document.querySelector('header');
+
+        var i = 0;
+        var message = 'Szukaj..'
+        var speed = 100;
+
+        menu.addEventListener('click', () => {
+            nav.classList.add('show-mobile-menu')
+        })
+
+        close.addEventListener('click', () => {
+            nav.classList.remove('show-mobile-menu')
+        })
+
+        searchBtn.addEventListener('click', () => {
+            search.style.width = '80%';
+            search.style.paddingLeft = '2.1em';
+            search.style.cursor = 'text';
+            search.focus();
+            //search.setAttribute('placeholder', 'Szukaj..')
+            typeWriter();
+        })
+
+        function typeWriter() {
+            if (i < message.length) {
+                msg = search.getAttribute('placeholder') +message.charAt(i);
+                search.setAttribute('placeholder', msg);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+
+        // When the user scrolls the page, execute myFunction
+        window.onscroll = function() {
+            stickyNav()
+        };
+
+        // Get the offset position of the navbar
+        var sticky = header.offsetTop;
+
+        // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+        function stickyNav() {
+            if (window.pageYOffset >= sticky) {
+                header.classList.add("sticky")
+            } else {
+                header.classList.remove("sticky");
+            }
+        }
+
+
+    </script>
+
+</body>
+</html>
